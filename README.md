@@ -25,5 +25,8 @@ npm run dev
 ```
 
 - Utilización de React.Fragment para agregar componentes.
-  - Este componente es una función que crea un elemento.
+- Un componente es una función que crea un elemento.
   - Los componentes deben de ser PascalCase, porque no diferencia entre un elemento HTML o un componente.
+  - La creación de los componentes se harán en App.jsx.
+  - Para aplicar los estilos a los elementos, se les debe de pasar un objeto y no una cadena de texto.
+  - Para que el componente siga siendo reutilizable incluso con los css, se debe de utilizar un selector de clase que es el `className`, porque el jsx se transforma en JS y en JS `class` es una palabra reservada.
