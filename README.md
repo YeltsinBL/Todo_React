@@ -35,5 +35,7 @@ npm run dev
   - Son los parámetros que recibe los componentes.
   - También se pueden pasar como parámetros: string, bool, number, function, elements, etc. No deben modificarse el valor de los parámetros.
   - Para realizar una evaluación en los componentes se deben realizar entre llaves.
+  - Children: esta prop es una palabra especial que recibe todo lo que envuelve el elemento.
+  - También se puede pasar los props como un solo objeto utilizando el rest-operator.
 
 > Nota: un componente es una función que al ejecutarla devuelve un elemento y el elemento es lo que renderiza React.
