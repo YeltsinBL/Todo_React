@@ -23,3 +23,7 @@ npm install
 # correr el proyecto
 npm run dev
 ```
+
+- Utilización de React.Fragment para agregar componentes.
+  - Este componente es una función que crea un elemento.
+  - Los componentes deben de ser PascalCase, porque no diferencia entre un elemento HTML o un componente.
