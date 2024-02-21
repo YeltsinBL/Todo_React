@@ -1,0 +1,12 @@
+{
+  "name": "todo_react",
+  "version": "1.0.0",
+  "description": "Iniciando en la programación con React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
