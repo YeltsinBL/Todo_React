@@ -3,7 +3,8 @@
 Iniciando en la programación con React.
 
 - React no renderiza una cadena de texto HTML, solo renderiza elementos.
-- Solo re-renderiza el componente donde ha ocurrido un cambio y no en todos los elementos de la UI.
+- Solo re-renderiza el DOM donde ha ocurrido un cambio y no en todos los elementos de la UI.
+- Si se renderiza un componente padre, los hijos también se renderizan.
 
 ## Projects
 
