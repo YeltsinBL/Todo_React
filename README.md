@@ -11,3 +11,4 @@ Iniciando en la programación con React.
 - 01-Twitter-Card
   - Creación del las tarjetas de twitter para seguir a los usuarios.
   - Utilización de React.Fragment, components, props, hooks(useState).
+- 02-Tic-Tac-Toe
