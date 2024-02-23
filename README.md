@@ -43,5 +43,8 @@ npm run dev
 - Hooks
   - Permite añadir cierta funcionalidad a los componentes de React o poder ejecutar código arbitrario cuando ocurre ciertas cosas en  los componentes o tener algún tipo de funcionalidad al mejorar el rendimiento del componente.
   - UseState: la usamos para guardar una variable, indicando si estamos siguiendo o no al usuario.
+- Key
+  - Identifica el elemento del array en cada componente para renderizarlo.
+  - Debe ser un valor único para que no se repita en los componentes.
 
 > Nota: un componente es una función que al ejecutarla devuelve un elemento y el elemento es lo que renderiza React.
