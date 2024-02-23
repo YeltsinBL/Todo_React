@@ -39,6 +39,7 @@ npm run dev
   - Para realizar una evaluación en los componentes se deben realizar entre llaves.
   - Children: esta prop es una palabra especial que recibe todo lo que envuelve el elemento.
   - También se puede pasar los props como un solo objeto utilizando el rest-operator.
+  - Si se utiliza una prop para inicializar un estado, solo se inicializa una vez.
 - Hooks
   - Permite añadir cierta funcionalidad a los componentes de React o poder ejecutar código arbitrario cuando ocurre ciertas cosas en  los componentes o tener algún tipo de funcionalidad al mejorar el rendimiento del componente.
   - UseState: la usamos para guardar una variable, indicando si estamos siguiendo o no al usuario.
