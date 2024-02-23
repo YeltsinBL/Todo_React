@@ -3,6 +3,7 @@
 Iniciando en la programación con React.
 
 - React no renderiza una cadena de texto HTML, solo renderiza elementos.
+- Solo re-renderiza el componente donde ha ocurrido un cambio y no en todos los elementos de la UI.
 
 ## Projects
 
@@ -37,5 +38,8 @@ npm run dev
   - Para realizar una evaluación en los componentes se deben realizar entre llaves.
   - Children: esta prop es una palabra especial que recibe todo lo que envuelve el elemento.
   - También se puede pasar los props como un solo objeto utilizando el rest-operator.
+- Hooks
+  - Permite añadir cierta funcionalidad a los componentes de React o poder ejecutar código arbitrario cuando ocurre ciertas cosas en  los componentes o tener algún tipo de funcionalidad al mejorar el rendimiento del componente.
+  - UseState: la usamos para guardar una variable, indicando si estamos siguiendo o no al usuario.
 
 > Nota: un componente es una función que al ejecutarla devuelve un elemento y el elemento es lo que renderiza React.
