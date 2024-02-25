@@ -22,3 +22,5 @@ npm run dev
   - Se hizo el clic en los cuadros para identificar el turno que le toca jugar.
 - Se creó el indicador del turno para mostrar el turno que le toca jugar.
   - Se cambia por cada clic que se haga en los cuadros.
+- Mostrar el turno dentro de los cuadros de las posiciones.
+  - Se crea un nuevo board para actualizar el valor de acuerdo al indice con el turno jugado y se pasa al board inicial para que lo renderice en la vista.
