@@ -24,3 +24,6 @@ npm run dev
   - Se cambia por cada clic que se haga en los cuadros.
 - Mostrar el turno dentro de los cuadros de las posiciones.
   - Se crea un nuevo board para actualizar el valor de acuerdo al indice con el turno jugado y se pasa al board inicial para que lo renderice en la vista.
+  - Validar que no se sobre escriba en la posición ya jugada en el tablero.
+
+> Nota: Los estados se tratan de manera inmutable, se debe de modificar usando el 'set_' pasándole, en este caso, un array nuevo al board principal y este solo se actualizará en donde se ha hecho el clic. Si se actualiza directamente sin utilizar el 'set_' puede que haya error al renderizar.

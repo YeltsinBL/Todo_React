@@ -30,15 +30,15 @@ function App() {
 
   // cambiar al turno siguiente
   const updateBoard=(index)=> {
-    // Crear un nuevo board
-    const newBoard = [...board]
-    // actualizar el valor de la posición del nuevo board
-    newBoard[index]=turn
-    // actualizar el board principal
-    setBoard(newBoard)
+    
+    if(board[index]) return // si ya existe un valor, no actualizar
 
+    const newBoard = [...board]  // Crear un nuevo board
+    newBoard[index]=turn// actualizar el valor de la posición del nuevo board
+    setBoard(newBoard) // actualizar el board principal
+
+    // cambiar el turno
     const newTurn = turn === TURNS.X? TURNS.O:TURNS.X
-
     setTurn(newTurn)
   }
 
