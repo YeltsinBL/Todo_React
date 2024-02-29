@@ -59,9 +59,17 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if(newWinner){
       setWinner(newWinner)
+    } else if(checkEndGame(newBoard)){
+      setWinner(false) // empate
     }
   }
 
+  // Verificar si hay empate
+  const checkEndGame = (newBoard) =>{
+    // verificamos si todas las posiciones del nuevo table son diferentes a null
+    return newBoard.every((square) => square !== null)
+  }
+  
   // Lógica para mostrar al ganador
   const checkWinner = (boardToCheck) =>{
     for (const combo of WINNER_COMBOS) {

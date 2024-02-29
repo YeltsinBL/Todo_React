@@ -34,6 +34,8 @@ npm run dev
 - Resetear juego
   - Actualizar los estados del board, turn y winner al valor inicial de cada uno.
   - Se agregó un botón para realizar el reseteo.
+- Verificar si hubo empate
+  - Recorremos todas las posiciones del nuevo tablero para verificar hay alguna vacía, de estar todas con valores y se devuelve como empate.
 
 > Nota:
 >
