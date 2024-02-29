@@ -5,13 +5,22 @@ import { TURNS } from "./constants"
 import { checkWinnerFrom, checkEndGame } from "./logic/board"
 import { WinnerModal } from "./components/WinnerModal"
 import { BoardModal } from "./components/BoardModal"
+import { saveGameToStorage, resetGameStorage } from "./logic/storage/LocalStorage"
 
 function App() {
   //tablero con las nueves posiciones vacías usando estado
-  const [board, setBoard] = useState(Array(9).fill(null))
+  const [board, setBoard] = useState(() =>{
+    // obtener el valor guardado en el LocalStorage
+    const boardFromStorage = window.localStorage.getItem('board')
+    // verificar si devolvemos el valor del localStorage o se crea uno nuevo
+    return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null)
+  })
 
   // saber el turno siguiente
-  const [turn, setTurn] = useState(TURNS.X)
+  const [turn, setTurn] = useState(() => {
+    const turnFromStorage = window.localStorage.getItem('turn')
+    return turnFromStorage ?? TURNS.X
+  })
   // null es que no hay ganador, false es que hay empate
   const [winner, setWinner] = useState(null)
 
@@ -36,18 +45,24 @@ function App() {
     } else if(checkEndGame(newBoard)){
       setWinner(false) // empate
     }
+
+    // guardar partida
+    saveGameToStorage({newBoard: newBoard, newTurn: newTurn})
   }
 
   const resetGame =() =>{
     setBoard(Array(9).fill(null))
     setTurn(TURNS.X)
     setWinner(null)
+
+    // resetear los valores del localStorage
+    resetGameStorage()
   }
   return (
     <main className='board'>
       <h1>Tic Tac Toe</h1>
       <button onClick={resetGame}>Resetear el juego</button>
-      
+
       {/* creación del tablero */}
       <BoardModal board={board} updateBoard={updateBoard}/>
 

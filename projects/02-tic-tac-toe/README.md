@@ -45,4 +45,6 @@ npm i canvas-confetti -E
 >
 > Los estados se tratan de manera inmutable, se debe de modificar usando el 'set_' pasándole, en este caso, un array nuevo al board principal y este solo se actualizará en donde se ha hecho el clic. Si se actualiza directamente sin utilizar el 'set_' puede que haya error al renderizar.
 >
-> Las actualizaciones de los estados son asíncronos
+> Las actualizaciones de los estados son asíncronos.
+>
+> Los useStates deben estar siempre en el cuerpo del componente, no deben estar dentro de un if, while, loop, etc.
