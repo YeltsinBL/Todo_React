@@ -3,6 +3,7 @@
 - Creación del proyecto React utilizando Vite.
 - Instalar las dependencias por defecto.
 - Correr el proyecto
+- Instalar dependencia de confetti
 
 ```s
 # Creación del proyecto con Vite
@@ -11,6 +12,8 @@ npm create vite@latest
 npm install
 # correr el proyecto
 npm run dev
+# Instalar confetti
+npm i canvas-confetti -E
 ```
 
 ## Proceso
@@ -31,6 +34,7 @@ npm run dev
   - Si existe un ganador ya no se podrá seguir jugando.
   - Se realizó la lógica para verificar si existe un ganador que devuelve el turno actual que ha jugado, de no existir ganador devuelve nulo.
   - Se muestra un alert si existe el ganador indicando el turno.
+  - Se lanza un efecto de confetti.
 - Resetear juego
   - Actualizar los estados del board, turn y winner al valor inicial de cada uno.
   - Se agregó un botón para realizar el reseteo.
