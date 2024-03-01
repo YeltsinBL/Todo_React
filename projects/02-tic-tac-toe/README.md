@@ -40,12 +40,6 @@ npm i canvas-confetti -E
   - Se agregó un botón para realizar el reseteo.
 - Verificar si hubo empate
   - Recorremos todas las posiciones del nuevo tablero para verificar hay alguna vacía, de estar todas con valores y se devuelve como empate.
-- UseEffect:
-  - Es un hook que nos permite ejecutar código arbitrario cuando el componente se monta en el DOM y cada vez que cambian las dependencias que se le indique.
-  - Se utiliza en el cuerpo del componente.
-  - Contiene dos parámetros
-    - Código: Solo se ejecuta una vez el código como mínimo porque cuando se monta el componente se ejecuta una vez, pero se puede hacer que se ejecute mas veces.
-    - Dependencias: Si no se le pasa el segundo parámetro, entonces el código se ejecutará cada vez que se renderice el componente.
 
 > Nota:
 >
