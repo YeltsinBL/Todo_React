@@ -4,6 +4,7 @@ function App () {
   const [enable, setEnable] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
+  // Efecto del puntero del mouse
   useEffect(() => {
     console.log('efecto', { enable })
     const handleMove = (event) => {
@@ -20,6 +21,15 @@ function App () {
     return () => {
       // limpiar la suscripción anterior
       window.removeEventListener('pointermove', handleMove)
+    }
+  }, [enable])
+
+  // cambiar la visualización del mouse
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enable)
+
+    return () => {
+      document.body.classList.remove('no-cursor')
     }
   }, [enable])
 
