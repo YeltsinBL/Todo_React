@@ -6,6 +6,13 @@ Iniciando en la programación con React.
 - Solo re-renderiza el DOM donde ha ocurrido un cambio y no en todos los elementos de la UI.
 - Si se renderiza un componente padre, los hijos también se renderizan.
 
+## Dependencias
+
+```S
+# Install Standard -Desarrollo: para formatear el código
+npm i standard -D
+```
+
 ## Projects
 
 - 01-Twitter-Card
