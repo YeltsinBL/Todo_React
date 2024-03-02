@@ -26,3 +26,23 @@ npm run dev
 > Para que el proyecto acepte React el archivo, en este caso el  'main', debe estar con la extensión '.jsx'.
 >
 > Para continuar con la prueba técnica es importante instalar el 'eslinter' porque servirá de gran ayuda para formatear el código
+
+## Descripción
+
+APIs:
+
+- Facts Random: https://catfact.ninja/fact
+- Imagen random: https://cataas.com/cat/says/hello
+
+- Recupera un hecho aleatorio de gatos de la primera API
+- Recuperar la primera palabra del hecho
+- Muestra una imagen de un gato con la primera palabra.
+
+## Proceso
+
+Recupera un hecho aleatorio de gatos de la primera API
+
+- Uso del 'useState' para mostrar la información de los gatos.
+- Uso del 'useEffect' para realizar la petición cuando se renderiza por primera vez el componente.
+  - La dependencia es vacía para que se ejecute solo la primera vez que se renderiza el componente, de lo contrario se obtendrá un loop infinito.
+  - El fetch se hace dentro de este hook.
