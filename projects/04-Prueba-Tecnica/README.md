@@ -43,6 +43,13 @@ APIs:
 Recupera un hecho aleatorio de gatos de la primera API
 
 - Uso del 'useState' para mostrar la información de los gatos.
-- Uso del 'useEffect' para realizar la petición cuando se renderiza por primera vez el componente.
-  - La dependencia es vacía para que se ejecute solo la primera vez que se renderiza el componente, de lo contrario se obtendrá un loop infinito.
+- Uso del 'useEffect'
   - El fetch se hace dentro de este hook.
+  - Para recuperar la cita
+    - la petición se renderiza por primera vez el componente.
+    - La dependencia es vacía para que se ejecute solo la primera vez que se renderiza el componente, de lo contrario se obtendrá un loop infinito.
+  - Para obtener la imagen
+    - Realiza una petición con las tres primeras palabras de la cita de la petición anterior.
+    - Obtenemos el Id de la imagen de la respuesta del fetch.
+    - La dependencia es el estado de la cita, porque cuando cambia la cita se debe hacer otra petición para actualizar la imagen.
+- Mostramos la cita e imagen, agregándole un poco de css.
