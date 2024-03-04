@@ -31,8 +31,8 @@ npm run dev
 
 APIs:
 
-- Facts Random: https://catfact.ninja/fact
-- Imagen random: https://cataas.com/cat/says/hello
+- Facts Random: `https://catfact.ninja/fact`
+- Imagen random: `https://cataas.com/cat/says/hello`
 
 - Recupera un hecho aleatorio de gatos de la primera API
 - Recuperar la primera palabra del hecho
@@ -53,3 +53,10 @@ Recupera un hecho aleatorio de gatos de la primera API
     - Obtenemos el Id de la imagen de la respuesta del fetch.
     - La dependencia es el estado de la cita, porque cuando cambia la cita se debe hacer otra petición para actualizar la imagen.
 - Mostramos la cita e imagen, agregándole un poco de css.
+- CustomHooks
+  - Reutilizar lógica de los compones en otros componentes.
+  - Se debe de crear una función que empiece con la palabra `use` porque asi React sabe que nos referimos a un CustomHooks.
+
+> Nota:
+>
+> - La diferencia de un CustomHooks y una función, es que dentro del CustomHooks se pueden llamar a otros Hooks y en una función no.
