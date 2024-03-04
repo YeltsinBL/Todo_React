@@ -60,3 +60,26 @@ Recupera un hecho aleatorio de gatos de la primera API
 > Nota:
 >
 > - La diferencia de un CustomHooks y una función, es que dentro del CustomHooks se pueden llamar a otros Hooks y en una función no.
+
+- Test PlayWright
+  - Se realizó unos test básicos referente al texto e imagen.
+  - Se inicializó el PlayWright.
+  - Como el proyecto usa import, se cambia la extensión del 'playwright.config.js' a 'playwright.config.cjs'.
+  - En el fichero de ejemplo del test, utilizar el import para el test y expect.
+  - En este caso se hará la prueba al contenido del texto y el src de la imagen.
+
+```S
+# Inicializar
+npm init playwright@latest
+# Configuración
+yes
+JavaScript
+test
+false
+true
+
+# Ejecutar el test
+npx playwright test
+# visualizar el reporte
+npx playwright show-report
+```
