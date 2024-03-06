@@ -30,6 +30,7 @@ Primera iteración:
 - Se utilizó `Water.css` para el diseño inicial de la web.
 - Para mostrar la lista de las películas, el título, año y poster, se utilizó un mapeo de datos para la respuesta del api y CustomHooks para separar la lógica del archivo principal.
 - Para obtener el valor del input, se hizo de dos formas, obteniéndolo directamente usando JS y otra usando UseRef.
+- Se uso UseEffect para realizar las validaciones del input del formulario y UseState para mostrar el mensaje de error.
 
 > Nota:
 >
