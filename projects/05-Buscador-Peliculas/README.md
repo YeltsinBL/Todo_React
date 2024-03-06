@@ -29,3 +29,9 @@ Primera iteración:
 
 - Se utilizó `Water.css` para el diseño inicial de la web.
 - Para mostrar la lista de las películas, el título, año y poster, se utilizó un mapeo de datos para la respuesta del api y CustomHooks para separar la lógica del archivo principal.
+- Para obtener el valor del input, se hizo de dos formas, obteniéndolo directamente usando JS y otra usando UseRef.
+
+> Nota:
+>
+> - UseRef: permite crear una referencia mutable que persiste todo el ciclo de vida del componente y guarda cualquier valor que se pueda mutar y cada vez que cambia, no vuelve a renderizar el componente. También guarda la referencia del DOM.
+> - UseState: cada vez que cambia el valor, se renderiza el componente
