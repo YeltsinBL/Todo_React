@@ -9,7 +9,7 @@ Requerimientos:
 
 ✅ Necesita mostrar un input para buscar la película y un botón para buscar.
 
-- Lista las películas y muestra el título, año y poster.
+✅ Lista las películas y muestra el título, año y poster.
 
 - Que el formulario funcione
 
@@ -24,3 +24,8 @@ Primera iteración:
 - Haz que la búsqueda se haga automáticamente al escribir.
 
 - Evita que se haga la búsqueda continuamente al escribir (debounce)
+
+## Proceso
+
+- Se utilizó `Water.css` para el diseño inicial de la web.
+- Para mostrar la lista de las películas, el título, año y poster, se utilizó un mapeo de datos para la respuesta del api y CustomHooks para separar la lógica del archivo principal.

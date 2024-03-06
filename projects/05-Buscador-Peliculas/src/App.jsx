@@ -1,6 +1,9 @@
 import './App.css'
+import { Movies } from './components/Movies.jsx'
+import { useMovies } from './hooks/useMovies.js'
 
 function App () {
+  const { movies } = useMovies()
   return (
     <>
       <div className='page'>
@@ -15,7 +18,7 @@ function App () {
           </form>
         </header>
         <main>
-          Aquí van los resultados
+          <Movies movies={movies} />
         </main>
       </div>
     </>
