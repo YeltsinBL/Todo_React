@@ -5,8 +5,8 @@ import { useMovies } from './hooks/useMovies.js'
 import { useSearch } from './hooks/useSearch.js'
 
 function App () {
-  const { movies } = useMovies()
   const { search, updateSearch, error } = useSearch()
+  const { movies, getMovies, loading } = useMovies({ search })
   const inputRef = useRef() // se guardará la referencia del input
 
   const handleSubmit = (event) => {
@@ -15,6 +15,7 @@ function App () {
     //   new window.FormData(event.target) // Recuperar el valor del input
     // )
     console.log({ search })
+    getMovies()
   }
 
   const handleChange = (event) => {
@@ -51,7 +52,11 @@ function App () {
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </header>
         <main>
-          <Movies movies={movies} />
+          {
+            loading
+              ? <p>Cargando</p>
+              : <Movies movies={movies} />
+          }
         </main>
       </div>
     </>
