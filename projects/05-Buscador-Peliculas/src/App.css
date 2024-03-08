@@ -3,14 +3,43 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 800px;
 }
 
 main{
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 form{
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.movies {
+  list-style: none; /* ocultar el punto del list */
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  width: 100%;
+  /* comportamiento de la grid
+    repeat: que se repita en todas las grid
+    auto-fit: que ocupe todo el espacio disponible
+    minmax(200px, 1fr): que ocupe como mínimo 200px o sino que solo haya una fracción
+  */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px; /* separación entre grid */
+}
+.movie {
+  text-align: center;
+}
+.movie h3, .movie p {
+  padding: 0;
+}
+.movie img {
+  border-radius: 8px;
+  margin-top: 16px;
 }
