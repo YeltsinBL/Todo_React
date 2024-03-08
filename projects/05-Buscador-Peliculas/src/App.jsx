@@ -1,12 +1,14 @@
 import './App.css'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Movies } from './components/Movies.jsx'
 import { useMovies } from './hooks/useMovies.js'
 import { useSearch } from './hooks/useSearch.js'
 
 function App () {
+  const [sort, setSort] = useState(false) // ordenar películas por año
   const { search, updateSearch, error } = useSearch()
-  const { movies, getMovies, loading } = useMovies({ search })
+  const { movies, getMovies, loading } = useMovies({ search, sort })
+
   const inputRef = useRef() // se guardará la referencia del input
 
   const handleSubmit = (event) => {
@@ -14,8 +16,12 @@ function App () {
     // const { query } = Object.fromEntries( // si existiera mas de un input, con esto se agruparían en un json
     //   new window.FormData(event.target) // Recuperar el valor del input
     // )
-    console.log({ search })
-    getMovies()
+    // console.log({ search })
+    getMovies({ search })
+  }
+
+  const handleSort = () => {
+    setSort(!sort)
   }
 
   const handleChange = (event) => {
@@ -47,6 +53,7 @@ function App () {
               onChange={handleChange} value={search} name='query' type='text' placeholder='Avenger, Star Wars, The Matrix'
             />
             {/* <input ref={inputRef} type='text' placeholder='Avenger, Star Wars, The Matrix' /> */}
+            <input type='checkbox' onChange={handleSort} checked={sort} />
             <button type='submit'>Buscar</button>
           </form>
           {error && <p style={{ color: 'red' }}>{error}</p>}

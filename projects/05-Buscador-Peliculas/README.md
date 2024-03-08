@@ -36,3 +36,7 @@ Primera iteración:
 >
 > - UseRef: permite crear una referencia mutable que persiste todo el ciclo de vida del componente y guarda cualquier valor que se pueda mutar y cada vez que cambia, no vuelve a renderizar el componente. También guarda la referencia del DOM.
 > - UseState: cada vez que cambia el valor, se renderiza el componente
+>
+> - UseMemo: memoriza las computaciones que se han hecho y queremos evitar que se vuelvan hacer a no ser que cambien las dependencias que le indicamos.
+>
+> - UseCallBack: hace lo mismo que el UseMemo, porque lo utiliza por 'debajo' y se debe utilizar solo para funciones.
