@@ -14,3 +14,9 @@ Carrito:
  Haz que se puedan modificar la cantidad de productos del carrito.
  Sincroniza los cambios del carrito con la lista de productos.
  Guarda en un localStorage el carrito para que se recupere al recargar la página. (da puntos)
+
+## Proceso
+
+- Se usó el UseState para los cambios en el filtro.
+  - En App.jsx para guardar los parámetros del filtro
+  - En Filters.jsx para guardar el cambio del precio.
