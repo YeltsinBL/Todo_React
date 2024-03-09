@@ -1,5 +1,5 @@
 import './App.css'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Movies } from './components/Movies.jsx'
 import { useMovies } from './hooks/useMovies.js'
 import { useSearch } from './hooks/useSearch.js'
@@ -10,7 +10,7 @@ function App () {
   const { search, updateSearch, error } = useSearch()
   const { movies, getMovies, loading } = useMovies({ search, sort })
 
-  const inputRef = useRef() // se guardará la referencia del input
+  // const inputRef = useRef() // se guardará la referencia del input
   const debounceGetMovies = useCallback(
     debounce(search => {
       getMovies({ search })
@@ -37,13 +37,13 @@ function App () {
     debounceGetMovies(newSearch) // buscar películas cada vez que se escribe
   }
 
-  const handleSubmitWithUseRef = (event) => {
-    event.preventDefault() // evitar el comportamiento por defecto
-    // const value = inputRef.current.value // acceder al valor de la referencia del elemento
-    const inputEl = inputRef.current // recuperamos el elemento
-    const value = inputEl.value // recuperamos el valor del elemento
-    console.log(value)
-  }
+  // const handleSubmitWithUseRef = (event) => {
+  //   event.preventDefault() // evitar el comportamiento por defecto
+  //   // const value = inputRef.current.value // acceder al valor de la referencia del elemento
+  //   const inputEl = inputRef.current // recuperamos el elemento
+  //   const value = inputEl.value // recuperamos el valor del elemento
+  //   console.log(value)
+  // }
   return (
     <>
       <div className='page'>
