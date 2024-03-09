@@ -33,7 +33,6 @@ Primera iteración:
 - Se uso UseEffect para realizar las validaciones del input del formulario y UseState para mostrar el mensaje de error.
 - Importar dependencia `just-debounce-it` para realizar la ejecución de la búsqueda cada cierto tiempo después de escribir en el input.
 
-
 > Nota:
 >
 > - UseRef: permite crear una referencia mutable que persiste todo el ciclo de vida del componente y guarda cualquier valor que se pueda mutar y cada vez que cambia, no vuelve a renderizar el componente. También guarda la referencia del DOM.
