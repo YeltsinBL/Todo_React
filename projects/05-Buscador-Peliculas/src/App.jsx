@@ -1,8 +1,9 @@
 import './App.css'
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { Movies } from './components/Movies.jsx'
 import { useMovies } from './hooks/useMovies.js'
 import { useSearch } from './hooks/useSearch.js'
+import debounce from 'just-debounce-it' // realizar la ejecución del código cada cierto tiempo
 
 function App () {
   const [sort, setSort] = useState(false) // ordenar películas por año
@@ -10,6 +11,12 @@ function App () {
   const { movies, getMovies, loading } = useMovies({ search, sort })
 
   const inputRef = useRef() // se guardará la referencia del input
+  const debounceGetMovies = useCallback(
+    debounce(search => {
+      getMovies({ search })
+    }, 300) // ejecutar la búsqueda cada 3 seg => 300 milisegundo
+    , [getMovies]
+  )
 
   const handleSubmit = (event) => {
     event.preventDefault() // evitar el comportamiento por defecto
@@ -25,7 +32,9 @@ function App () {
   }
 
   const handleChange = (event) => {
-    updateSearch(event.target.value) // Recuperar el valor del input y actualizamos el estado
+    const newSearch = event.target.value // Recuperar el valor del input
+    updateSearch(newSearch) // actualizamos el estado
+    debounceGetMovies(newSearch) // buscar películas cada vez que se escribe
   }
 
   const handleSubmitWithUseRef = (event) => {

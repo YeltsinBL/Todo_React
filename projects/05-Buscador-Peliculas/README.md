@@ -21,9 +21,9 @@ Primera iteración:
 
 ✅ Evitar que se haga la misma búsqueda dos veces seguidas.
 
-- Haz que la búsqueda se haga automáticamente al escribir.
+✅ Haz que la búsqueda se haga automáticamente al escribir.
 
-- Evita que se haga la búsqueda continuamente al escribir (debounce)
+✅ Evita que se haga la búsqueda continuamente al escribir (debounce)
 
 ## Proceso
 
@@ -31,6 +31,8 @@ Primera iteración:
 - Para mostrar la lista de las películas, el título, año y poster, se utilizó un mapeo de datos para la respuesta del api y CustomHooks para separar la lógica del archivo principal.
 - Para obtener el valor del input, se hizo de dos formas, obteniéndolo directamente usando JS y otra usando UseRef.
 - Se uso UseEffect para realizar las validaciones del input del formulario y UseState para mostrar el mensaje de error.
+- Importar dependencia `just-debounce-it` para realizar la ejecución de la búsqueda cada cierto tiempo después de escribir en el input.
+
 
 > Nota:
 >

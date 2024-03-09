@@ -28,7 +28,7 @@ export function useMovies ({ search, sort }) {
 
   // evitar volver a ordenar las películas si no ha cambiado
   const shortedMovies = useMemo(() => {
-    return sort
+    return (sort && movies !== null)
       ? [...movies].sort((a, b) => a.title.localeCompare(b.title))
       : movies
   }, [sort, movies])
