@@ -20,3 +20,8 @@ Carrito:
 - Se usó el UseState para los cambios en el filtro.
   - En App.jsx para guardar los parámetros del filtro
   - En Filters.jsx para guardar el cambio del precio.
+  - PropDrilling: parar las props por varios componentes hasta llegar al componente que lo usará.
+
+> Nota: Hooks
+>
+> - UseId: genera un identificador único que siempre va hacer el mismo y ademas funciona con ServerSideRendering
