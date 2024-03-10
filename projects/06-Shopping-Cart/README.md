@@ -21,6 +21,9 @@ Carrito:
   - En App.jsx para guardar los parámetros del filtro
   - En Filters.jsx para guardar el cambio del precio.
   - PropDrilling: parar las props por varios componentes hasta llegar al componente que lo usará.
+- UseId: para dar una identificador único a los elementos de los filtros.
+- CustomHooks: extraer la lógica del filtro.
+- Footer.jsx: visualizar el estado de los filtros.
 
 > Nota: Hooks
 >
