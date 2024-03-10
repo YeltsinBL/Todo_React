@@ -28,3 +28,7 @@ Carrito:
 > Nota: Hooks
 >
 > - UseId: genera un identificador único que siempre va hacer el mismo y ademas funciona con ServerSideRendering
+>
+> - UseContext: esta separado del árbol de los componentes y se puede leer de forma separada; almacena lógica, hooks, estados, etc. Para leer la información, la aplicación o alguna parte debe de estar envuelto en un ContextProvider, de lo contrario no se puede leer el código.
+>
+> - El contexto es una forma de inyección de dependencia, se puede inyectar información saltándose las props de los componentes. Se pueden hacer estados globales pero que sean pequeños o que no cambien con mucha frecuencia (configuraciones, tokens, traducciones, etc).
