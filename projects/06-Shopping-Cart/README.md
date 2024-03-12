@@ -24,6 +24,16 @@ Carrito:
 - UseId: para dar una identificador único a los elementos de los filtros.
 - CustomHooks: extraer la lógica del filtro.
 - Footer.jsx: visualizar el estado de los filtros.
+- Agregar productos al carrito
+  - Creación del Context y Provider para envolver los componentes del App.jsx y pasar el producto al UseState del Context.
+  - Provider:
+    - Constantes con la lógica para agregar, retirar y limpiar los productos agregados al UseState.
+    - Retorna los productos agregados en el carrito, las constantes y recibe el children.
+  - UseCart: verificar si el Context esta siendo utilizado correctamente y devolver los retornos .
+  - Products:
+    - Utilizar las constantes del Provider pasando el producto para actualizar el UseState del Context.
+    - Verificar si el producto que tiene el UseState del Provider ya esta agregado en el Carrito.
+    - Cambiar la vista y acción del botón del producto cuando se agregada o elimina del carrito.
 
 > Nota: Hooks
 >
