@@ -48,6 +48,9 @@ Carrito:
     - Uso del UseCart para utilizar los productos agregados en el UseContext del Provider y las constantes de agregar y limpiar.
     - Iterar los productos agregados en el Provider para visualizarlos usando la función CartItem pasando estos datos y la constante de agregar.
     - Botón limpiar utilizando la constante limpiar.
+  - UseReduce:
+    - Separación de la lógica de  actualizar el estado del producto en una función totalmente separada.
+    - De esta forma se puede testear la lógica del estado sin renderizar nada, en cambio con el UseState la lógica está dentro del componente y costará mucho más hacerlo.
 
 > Nota: Hooks
 >
@@ -56,3 +59,7 @@ Carrito:
 > - UseContext: esta separado del árbol de los componentes y se puede leer de forma separada; almacena lógica, hooks, estados, etc. Para leer la información, la aplicación o alguna parte debe de estar envuelto en un ContextProvider, de lo contrario no se puede leer el código.
 >
 > - El contexto es una forma de inyección de dependencia, se puede inyectar información saltándose las props de los componentes. Se pueden hacer estados globales pero que sean pequeños o que no cambien con mucha frecuencia (configuraciones, tokens, traducciones, etc).
+>
+> - UseReducer: permite manejar el estado de una manera escalable porque recibe en una función el estado actual y la acción que tiene que hacer y a partir de estos dos devuelve el nuevo estado que esta separado del Provider y CustomHooks
+>
+> - Cuando se tiene muchos UseState seguidos (fragmentados) haciendo cambios manualmente, con el UseReducer se puede pasar una acción y dentro de ella se puede cambiar el estado que se necesite.
