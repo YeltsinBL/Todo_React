@@ -1,6 +1,7 @@
-// UseReducer
-
-export const initialState = []
+export const cartInitialState = JSON.parse(window.localStorage.getItem('cart')) || []
+const updateLocalStorage = state => {
+  window.localStorage.setItem('cart', JSON.stringify(state))
+}
 
 const CART_ACTION_TYPES = {
 
@@ -10,6 +11,7 @@ const CART_ACTION_TYPES = {
 
 }
 
+// UseReducer
 export const cartReducer = (state, action) => {
   // Pasamos la acción que va hacer y todo el objeto para actualizar el estado (producto)
   const { type: actionType, payload: actionPayload } = action
@@ -24,22 +26,30 @@ export const cartReducer = (state, action) => {
       // utilizando structureClone:hace una copia profunda del array
         const newState = structuredClone(state)
         newState[productInCartIndex].quantity += 1
+        updateLocalStorage(newState)
         return newState
       }
-      return [
+      const newState = [
         ...state,
         {
           ...actionPayload,
           quantity: 1
         }
       ]
+
+      updateLocalStorage(newState)
+      return newState
     }
     case CART_ACTION_TYPES.REMOVE_FROM_CART: {
       const { id } = actionPayload
-      return state.filter(item => item.id !== id)
+      const newState = state.filter(item => item.id !== id)
+
+      updateLocalStorage(newState)
+      return newState
     }
     case CART_ACTION_TYPES.CLEAR_CART: {
-      return initialState
+      updateLocalStorage([])
+      return []
     }
   }
   return state

@@ -1,11 +1,11 @@
 import { createContext, useReducer } from 'react'
-import { initialState, cartReducer } from '../reducers/cart'
+import { cartInitialState, cartReducer } from '../reducers/cart'
 
 // Creación del contexto
 export const CartContext = createContext()
 function useCartReducer () {
   // Estado y función que se encarga de enviar las acciones al reduce
-  const [state, dispatch] = useReducer(cartReducer, initialState)
+  const [state, dispatch] = useReducer(cartReducer, cartInitialState)
   const addToCart = product => dispatch({
     type: 'ADD_TO_CART',
     payload: product
