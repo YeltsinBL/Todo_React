@@ -2,7 +2,7 @@
 
 ✅ Instalar el linter
 
- Crear una forma de hacer MPAs (Multiple Page Application)
+✅ Crear una forma de hacer MPAs (Multiple Page Application)
 
  Crea una forma de hacer SPAs (Single Page Applications)
 
@@ -25,3 +25,8 @@
  Testing
 
  Publicar el paquete en NPM
+
+## Proceso
+
+- Crear una forma de hacer MPAs (Multiple Page Application)
+  - Se hizo con UseState y con condicionales para mostrar la página
