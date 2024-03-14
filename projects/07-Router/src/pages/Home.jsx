@@ -1,4 +1,5 @@
-import { navigate } from '../App.jsx'
+import { navigate } from '../Link.jsx'
+
 export default function HomePage () {
   return (
     <>

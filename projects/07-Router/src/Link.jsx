@@ -1,4 +1,4 @@
-import { EVENTS } from './consts'
+import { EVENTS } from './consts.js'
 
 export function navigate (href) {
   // cambia la URL sin actualizar la página
