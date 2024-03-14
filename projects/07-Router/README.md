@@ -4,7 +4,7 @@
 
 ✅ Crear una forma de hacer MPAs (Multiple Page Application)
 
- Crea una forma de hacer SPAs (Single Page Applications)
+✅ Crea una forma de hacer SPAs (Single Page Applications)
 
  Poder navegar entre páginas con el botón de atrás
 
@@ -29,4 +29,9 @@
 ## Proceso
 
 - Crear una forma de hacer MPAs (Multiple Page Application)
-  - Se hizo con UseState y con condicionales para mostrar la página
+  - Se hizo con UseState y con condicionales para mostrar la página.
+- Crea una forma de hacer SPAs (Single Page Applications)
+  - Se usó el UseEffect para que se ejecute única vez cuando cargue la primera vez de la pagina.
+  - Actualizamos el estado del UseState cuando se cambie la URL.
+  _ Nos suscribimos al evento creado para que haga la actualización del estado y luego removemos el evento.
+  - En los botones se usa la función para navegar, donde se agregó la forma de no recargar toda la página al cambiar la URL.
