@@ -6,7 +6,7 @@
 
 ✅ Crea una forma de hacer SPAs (Single Page Applications)
 
- Poder navegar entre páginas con el botón de atrás
+✅ Poder navegar entre páginas con el botón de atrás
 
  Crear componente Link para hacerlo declarativo
 
@@ -35,3 +35,5 @@
   - Actualizamos el estado del UseState cuando se cambie la URL.
   _ Nos suscribimos al evento creado para que haga la actualización del estado y luego removemos el evento.
   - En los botones se usa la función para navegar, donde se agregó la forma de no recargar toda la página al cambiar la URL.
+- Navegar entre páginas con el botón de atrás del navegador
+  - En el UseEffect, se agregó otro EventListener con el `popstate` para poder retroceder porque en el anterior solo funcionaba la pagina hacia adelante con el `pushestate`
