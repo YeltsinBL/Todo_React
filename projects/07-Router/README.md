@@ -8,7 +8,7 @@
 
 ✅ Poder navegar entre páginas con el botón de atrás
 
- Crear componente Link para hacerlo declarativo
+✅ Crear componente Link para hacerlo declarativo
 
  Crear componente Router para hacerlo más declarativo
 
@@ -37,3 +37,9 @@
   - En los botones se usa la función para navegar, donde se agregó la forma de no recargar toda la página al cambiar la URL.
 - Navegar entre páginas con el botón de atrás del navegador
   - En el UseEffect, se agregó otro EventListener con el `popstate` para poder retroceder porque en el anterior solo funcionaba la pagina hacia adelante con el `pushestate`
+- Componente Link para hacerlo declarativo
+  - Se creó el componente que recibe todas las propiedades del `<a/>` mediante los props.
+  - Este compomente tiene la logica para hacer click y presionar a la vez los botones del teclado.
+  - Usa el `navigate` para evitar recargar la página cuando cambia la URL.
+  - Devuelve un `<a/>` con todas sus propiedad que se le pasaron en las props.
+  - En el Home.jsx y About.jsx, se cambio el uso del navigate para que ahora use el componente del Link pasándole el path de la URL y el children.
