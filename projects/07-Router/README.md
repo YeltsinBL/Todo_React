@@ -12,7 +12,7 @@
 
 ✅ Crear componente Router para hacerlo más declarativo
 
- Soportar ruta por defecto (404)
+✅ Soportar ruta por defecto (404)
 
  Soportar rutas con parámetros
 
@@ -48,3 +48,5 @@
   - Router.jsx: se crea una función que recibirá como parámetro el array de las rutas y por defecto tendrá un componente que indicará la ruta no encontrada.
     - Se extrae toda la lógica del router realizado en el App.jsx y lo agregamos en esta función.
     - Al fina de la lógica extraída, iteramos el array y buscamos el path para comparar si es el mismo del estado actual, si es el mismo obtenemos el componente, de lo contrario, mostrará el componente por defecto.
+- Soportar ruta por defecto (404)
+  - Se crea un nuevo componente que se le pasará en el parámetro por defecto de la función del Router.jsx
