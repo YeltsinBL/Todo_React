@@ -10,7 +10,7 @@
 
 ✅ Crear componente Link para hacerlo declarativo
 
- Crear componente Router para hacerlo más declarativo
+✅ Crear componente Router para hacerlo más declarativo
 
  Soportar ruta por defecto (404)
 
@@ -39,7 +39,12 @@
   - En el UseEffect, se agregó otro EventListener con el `popstate` para poder retroceder porque en el anterior solo funcionaba la pagina hacia adelante con el `pushestate`
 - Componente Link para hacerlo declarativo
   - Se creó el componente que recibe todas las propiedades del `<a/>` mediante los props.
-  - Este compomente tiene la logica para hacer click y presionar a la vez los botones del teclado.
+  - Este componente tiene la lógica para hacer click y presionar a la vez los botones del teclado.
   - Usa el `navigate` para evitar recargar la página cuando cambia la URL.
   - Devuelve un `<a/>` con todas sus propiedad que se le pasaron en las props.
   - En el Home.jsx y About.jsx, se cambio el uso del navigate para que ahora use el componente del Link pasándole el path de la URL y el children.
+- Componente Router para hacerlo más declarativo
+  - Extraer las rutas que se tiene en un array de objetos, asi se puede agregar mas rutas si es necesario fácilmente.
+  - Router.jsx: se crea una función que recibirá como parámetro el array de las rutas y por defecto tendrá un componente que indicará la ruta no encontrada.
+    - Se extrae toda la lógica del router realizado en el App.jsx y lo agregamos en esta función.
+    - Al fina de la lógica extraída, iteramos el array y buscamos el path para comparar si es el mismo del estado actual, si es el mismo obtenemos el componente, de lo contrario, mostrará el componente por defecto.
