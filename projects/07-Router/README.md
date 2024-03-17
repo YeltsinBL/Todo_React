@@ -14,7 +14,7 @@
 
 ✅ Soportar ruta por defecto (404)
 
- Soportar rutas con parámetros
+✅ Soportar rutas con parámetros
 
  Componente para hacerlo declarativo
 
@@ -50,3 +50,9 @@
     - Al fina de la lógica extraída, iteramos el array y buscamos el path para comparar si es el mismo del estado actual, si es el mismo obtenemos el componente, de lo contrario, mostrará el componente por defecto.
 - Soportar ruta por defecto (404)
   - Se crea un nuevo componente que se le pasará en el parámetro por defecto de la función del Router.jsx
+- Soportar rutas con parámetros
+  - Instalamos la dependencia de Regexp `npm install path-to-regexp -E`
+  - Modificamos la lógica de la función del Router para utilizar el 'match' del `path-to-regexp`.
+  - Al momento de iterar el array con las rutas, indicamos que evalúe si existe rutas dinámicas, de existir lo agregamos en una variable que se le pasará a componente como parámetro.
+  - En la función de este componente se debe de agregar como parámetro el valor que recibirá y asi poder utilizarlo dentro de ella.
+  - En el App.jsx agregamos otra ruta indicando el ':query' que será la ruta dinámica (parámetro).

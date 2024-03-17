@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { EVENTS } from './consts.js'
+import { match } from 'path-to-regexp'
 
 export function Router ({ routers = [], defaultComponent: DefaultComponent = () => <h1>404</h1> }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
@@ -20,8 +21,26 @@ export function Router ({ routers = [], defaultComponent: DefaultComponent = () 
     }
   }, [])
 
+  let routeParams = {}
+
   // Iteramos el array y buscamos el path para comparar si es el mismo del estado actual
   // si es el mismo obtenemos el component
-  const Page = routers.find(({ path }) => path === currentPath)?.Component
-  return Page ? <Page /> : <DefaultComponent />
+  const Page = routers.find(({ path }) => {
+    if (path === currentPath) return true
+
+    // se usa path-to-regexp para detectar rutas dinámicas
+    // como por ejemplo 'search/:query' :query es una ruta dinámica
+    // match: devuelve otra función que permitirá compararlo con el currentPath
+    // al path debemos de pasarle como se va a decodificar la URL
+    const matchUrl = match(path, { decode: decodeURIComponent })
+    const matched = matchUrl(currentPath)
+    if (!matched) return false // no encontró query
+
+    // guarda los parámetros de la url dinámica que se extrajo usando path-to-regexp
+    // si la ruta es 'search/:query' y la url es '/search/react'
+    // matched.params.query === 'react'
+    routeParams = matched.params // esto devuelve {query: 'valor'}
+    return true
+  })?.Component
+  return Page ? <Page routeParams={routeParams} /> : <DefaultComponent routeParams={routeParams} />
 }
