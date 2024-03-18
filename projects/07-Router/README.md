@@ -16,7 +16,7 @@
 
 ✅ Soportar rutas con parámetros
 
- Componente para hacerlo declarativo
+✅ Componente para hacerlo declarativo
 
  Lazy Loading de las rutas
 
@@ -56,3 +56,14 @@
   - Al momento de iterar el array con las rutas, indicamos que evalúe si existe rutas dinámicas, de existir lo agregamos en una variable que se le pasará a componente como parámetro.
   - En la función de este componente se debe de agregar como parámetro el valor que recibirá y asi poder utilizarlo dentro de ella.
   - En el App.jsx agregamos otra ruta indicando el ':query' que será la ruta dinámica (parámetro).
+- Componente para hacerlo declarativo
+  - Se crea un componente Route que servirá como 'puente' para pasar los 'path' y 'Component' al Router.jsx donde está la lógica de los routers.
+  - Se modifica el App.jsx para que utilice el nuevo componente Route pasándole los valores correspondientes a los 'path' y 'Component'.
+  - En la función del Router agregamos como prop el 'children' que es quien recibirá los valores del 'path' y 'Component'  como array, si no se pasa como array se tiene que convertirlo a uno.
+  - Utilizamos el 'Children.map' de React para poder iterar el prop children y obtenemos su 'props' y 'type' del mismo.
+    - El prop contiene los valores 'path' y 'Component'
+    - El type indica si es el componente Route.
+  - Verificamos si se esta utilizando el componente Route para devolver el props.
+  - En una constante guardamos la concatenación de los valores del prop con el routers que recibe la función como parámetro y lo iteramos.
+    - Reemplazamos la iteración del routers por esta nueva constante.
+

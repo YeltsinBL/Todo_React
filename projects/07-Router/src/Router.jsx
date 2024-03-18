@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Children } from 'react'
 import { EVENTS } from './consts.js'
 import { match } from 'path-to-regexp'
 
-export function Router ({ routers = [], defaultComponent: DefaultComponent = () => <h1>404</h1> }) {
+export function Router ({ children, routers = [], defaultComponent: DefaultComponent = () => <h1>404</h1> }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
   useEffect(() => {
     // actualizamos el estado cuando cambien la URL
@@ -23,9 +23,18 @@ export function Router ({ routers = [], defaultComponent: DefaultComponent = () 
 
   let routeParams = {}
 
+  // agregamos las rutas que vienen del <Route/> componente
+  const routersFromChildren = Children.map(children, ({ props, type }) => {
+    const { name } = type
+    const isRoute = name === 'Route'
+    return isRoute ? props : null
+  })
+
+  const routeToUse = routers.concat(routersFromChildren)
+
   // Iteramos el array y buscamos el path para comparar si es el mismo del estado actual
   // si es el mismo obtenemos el component
-  const Page = routers.find(({ path }) => {
+  const Page = routeToUse.find(({ path }) => {
     if (path === currentPath) return true
 
     // se usa path-to-regexp para detectar rutas dinámicas
