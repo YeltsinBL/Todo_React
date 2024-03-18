@@ -20,7 +20,7 @@
 
 ✅ Lazy Loading de las rutas
 
- Hacer un i18n con las rutas
+✅ Hacer un i18n con las rutas
 
  Testing
 
@@ -72,3 +72,6 @@
     - No renderiza los componentes hasta que los necesitemos.
   - Se le debe de indicar a React que tendrá una parte de la UI que no estará disponible desde el principio y por ello se envuelve una parte de la aplicación con el componente '<Suspense/>' de React, que indica que está en estado suspendido.
   - Usando un 'fallback' dentro del Suspense, se puede agregar un loader o lo que deseamos antes de mostrar el componente que se requiere.
+- Hacer un i18n con las rutas
+  - Creamos una constante de array con los datos en español e ingles para poder diferenciar en que idioma queremos los textos.
+  - En este caso, en la propia ruta se agregó como path el valor del idioma.

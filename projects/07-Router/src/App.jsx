@@ -14,6 +14,10 @@ const LazyAboutPage = lazy(() => import('./pages/About.jsx'))
 // extraer las rutas que se tiene en un array de objetos
 const routes = [
   {
+    path: '/:lang/about',
+    Component: LazyAboutPage
+  },
+  {
     path: '/search/:query',
     Component: SearchPage
   }
