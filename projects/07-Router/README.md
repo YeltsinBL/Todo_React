@@ -18,7 +18,7 @@
 
 ✅ Componente para hacerlo declarativo
 
- Lazy Loading de las rutas
+✅ Lazy Loading de las rutas
 
  Hacer un i18n con las rutas
 
@@ -66,4 +66,9 @@
   - Verificamos si se esta utilizando el componente Route para devolver el props.
   - En una constante guardamos la concatenación de los valores del prop con el routers que recibe la función como parámetro y lo iteramos.
     - Reemplazamos la iteración del routers por esta nueva constante.
-
+- Lazy Loading de las rutas
+  - Usamos el 'Lazy' de React:
+    - permite importar de forma dinámica los componentes.
+    - No renderiza los componentes hasta que los necesitemos.
+  - Se le debe de indicar a React que tendrá una parte de la UI que no estará disponible desde el principio y por ello se envuelve una parte de la aplicación con el componente '<Suspense/>' de React, que indica que está en estado suspendido.
+  - Usando un 'fallback' dentro del Suspense, se puede agregar un loader o lo que deseamos antes de mostrar el componente que se requiere.
