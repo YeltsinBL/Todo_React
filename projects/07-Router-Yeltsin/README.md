@@ -24,7 +24,7 @@
 
 ✅ Testing
 
- Publicar el paquete en NPM
+✅ Publicar el paquete en NPM
 
 ## Proceso
 
@@ -88,3 +88,45 @@
     - Test del Router sin path pero con DefaultComponent para buscar el texto dentro del html.
     - Test del Router pasando los routers (path y component) y buscar el texto dentro del html.
     - Test haciendo la navegación click en el Link y buscar el texto en el html del nuevo renderizado.
+- Publicar el paquete en NPM
+  - Instalar la dependencia SWC porque permite compilar los ficheros para poder utilizarlo sin un compilador.
+  - Creamos un archivo `.swcrc` y copiamos el contenido desde la web de `https://swc.rs/docs/configuration/swcrc` para configurar la compilación
+    - Modificamos algunos valores
+      - Minify: true (para minificar el código)
+      - Target: "es2020"
+      - Loose: true (hará el código mas eficiente pero no cumple al 100% la especificación)
+      - Jsx: true
+      - Transform: {
+        "react": {
+          "runtime": "automatic"
+        }
+      } (hace una transformación mas optima utilizando el `jsx` en lugar del React.createElement)
+  - Utilizamos el siguiente comando en la terminal para compilar los archivo metiéndolos en una carpeta lib.
+    - `npx swc ./src/*.jsx -d lib`
+    - Los archivos creados deben estar en la carpeta lib, si creara lib/src y luego los archivos, utilizar este comando: `npx swc ./src/*.jsx -d lib && mv ./lib/src/*.js ./lib && rm -R ./lib/src`.
+    - El comando anterior compila los archivos, luego mueve los archivos del src al lib y por ultimo elimina la carpeta src.
+  - En el package.json también se harán cambios para la configuración
+    - Dentro del script agregamos un 'prepare'
+      - Prepare: "swc ./src/*.jsx -d lib && rm lib/App.js lib/main.js lib/Router.test.js && cp src/*.js lib" (script especial del package.json que se va a ejecutar justo antes de que se haga el publish)
+      - Los archivos creados deben estar en la carpeta lib, si creara lib/src y luego los archivos, reemplazar el `prepare` por esto: `"npm run test && swc ./src/*.jsx -d lib && mv ./lib/src/*.js ./lib && rm -R ./lib/src && rm lib/App.js lib/main.js lib/Router.test.js && cp src/*.js lib"`.
+      - El comando anterior realiza los test y si todo va bien, compila los archivos, mueve los archivos del src al lib y elimina la carpeta src, luego elimina algunos archivos js dentro del lib y por ultimo copia los js del src para pegarlos en el lib.
+      - test: "vitest run" (para que ejecute la prueba normal, no muestra a detalle el resultado correcto, solo muestra si existe un error)
+      - test:watch: "vitest" (ejecuta el test mostrando a detalle los resultados)
+      - test:ui : "vitest --ui" (muestra los test en una web para ver mas detalles)
+    - Eliminamos el private
+    - Modificamos la version : "0.0.1"
+    - Main: "lib/index.js"
+    - Module: "lib/index.js"
+    - Export: {
+        ".": {
+          "import": "./lib/index.js",
+          "require": "./lib/index.js"
+        },
+        "./package.json": "./package.json"
+      }
+    - PeerDependencies: agregamos la referencias a las dependencias de React y React-Dom, esto significa que no lo instalaremos nosotros sino que dependerá del proyecto que lo va a utilizar, debe de tener estas dependencias instaladas.
+  - Creamos un archivo `index.jsx` para exportar los archivos necesarios para la publicación, se debe de exportarlo sin su extensión '.jsx'.
+  - Crear un archivo `.npmignore` para ignorar la carpeta src.
+  - En la terminal
+    - Ingresamos: `npm login`, luego nos pide las credencias para acceder a nuestra cuenta de npm.
+    - Ejecutamos: `npm publish` y por cada cambio se debe de actualizar la versión del package.json y volver a publicar.
