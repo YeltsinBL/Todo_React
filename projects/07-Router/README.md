@@ -22,7 +22,7 @@
 
 ✅ Hacer un i18n con las rutas
 
- Testing
+✅ Testing
 
  Publicar el paquete en NPM
 
