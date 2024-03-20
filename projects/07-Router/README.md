@@ -75,3 +75,16 @@
 - Hacer un i18n con las rutas
   - Creamos una constante de array con los datos en español e ingles para poder diferenciar en que idioma queremos los textos.
   - En este caso, en la propia ruta se agregó como path el valor del idioma.
+- Testing
+  - Instalamos dependencias
+    - Vitest: para haces los test.
+    - Vitest/ui: para ver los test en la web.
+    - Happy-Dom: para simular un árbol de elementos, como un navegador sin tener un navegador.
+    - @testing-library/react: renderiza y se pregunta si existe el componente, elemento, acciones, etc.
+  - En la configuración de vite.config, indicamos que el entorno donde se ejecutarán los test es en `happy-dom`.
+  - Creamos el archivo 'Router.test.jsx' para hacer los test a los routers.
+    - Limpiar la pantalla (html) y mockups al ejecutar cada test.
+    - Test del Router sin path.
+    - Test del Router sin path pero con DefaultComponent para buscar el texto dentro del html.
+    - Test del Router pasando los routers (path y component) y buscar el texto dentro del html.
+    - Test haciendo la navegación click en el Link y buscar el texto en el html del nuevo renderizado.

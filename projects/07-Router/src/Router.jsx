@@ -1,13 +1,14 @@
 import { useEffect, useState, Children } from 'react'
 import { EVENTS } from './consts.js'
 import { match } from 'path-to-regexp'
+import { getCurrentPath } from './utils.js'
 
 export function Router ({ children, routers = [], defaultComponent: DefaultComponent = () => <h1>404</h1> }) {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname)
+  const [currentPath, setCurrentPath] = useState(getCurrentPath())
   useEffect(() => {
     // actualizamos el estado cuando cambien la URL
     const onLocalChange = () => {
-      setCurrentPath(window.location.pathname)
+      setCurrentPath(getCurrentPath())
     }
     // Agregamos al evento el callback
     window.addEventListener(EVENTS.PUSH_STATE, onLocalChange)
@@ -30,7 +31,7 @@ export function Router ({ children, routers = [], defaultComponent: DefaultCompo
     return isRoute ? props : null
   })
 
-  const routeToUse = routers.concat(routersFromChildren)
+  const routeToUse = routers.concat(routersFromChildren).filter(Boolean)
 
   // Iteramos el array y buscamos el path para comparar si es el mismo del estado actual
   // si es el mismo obtenemos el component
