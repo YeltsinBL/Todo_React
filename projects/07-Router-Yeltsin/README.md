@@ -56,6 +56,7 @@
   - Al momento de iterar el array con las rutas, indicamos que evalúe si existe rutas dinámicas, de existir lo agregamos en una variable que se le pasará a componente como parámetro.
   - En la función de este componente se debe de agregar como parámetro el valor que recibirá y asi poder utilizarlo dentro de ella.
   - En el App.jsx agregamos otra ruta indicando el ':query' que será la ruta dinámica (parámetro).
+  - En el index.jsx agregamos un CustomHook para recibir los QueryParams anidados, ya sea en el servidor o cliente, y lo utilizamos en el Search.jsx
 - Componente para hacerlo declarativo
   - Se crea un componente Route que servirá como 'puente' para pasar los 'path' y 'Component' al Router.jsx donde está la lógica de los routers.
   - Se modifica el App.jsx para que utilice el nuevo componente Route pasándole los valores correspondientes a los 'path' y 'Component'.
