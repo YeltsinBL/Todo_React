@@ -5,7 +5,7 @@ Aplicación Todo-App con TypeScript
 ## Objetivos
 
 - ✅ Inicializar proyecto con Vite
-- [ ] Añadir linter para TypeScript + React
+- ✅ Añadir linter para TypeScript + React
 - [ ] Añadir estilos del TodoMVC
 - [ ] Listar todos los TODOs
 - [ ] Poder borrar un TODO
@@ -19,3 +19,14 @@ Aplicación Todo-App con TypeScript
 - [ ] Añadir animaciones con AutoAnimate
 - [ ] Pasar a Reducer
 - [ ] Sincronizar con el backend
+
+## Procesos
+
+- Añadir linter para TypeScript + React
+  - Se utilizó el siguiente comando en la terminal: `npm init @eslint/config`
+  - Luego se configuró las especificaciones que utilice JavaScript (ESM), React, TypeScript, Browser, Guide, Standard, JavaScript y en mi caso, tuve que instalar manualmente las dependencias que se indicará en la terminar.
+  - En el proyecto
+    - En el archivo '.eslintrc.cjs': Agregar en el "parserOptions": {
+        "project":'./tsconfig.json'
+    } para que reconozca las configuraciones de ese archivo.
+    - En el App.tsx aparecerán los errores para las correcciones, solo agregar 'React' en la importación de react.
