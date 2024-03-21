@@ -25,6 +25,7 @@ Aplicación Todo-App con TypeScript
 - Añadir linter para TypeScript + React
   - Se utilizó el siguiente comando en la terminal: `npm init @eslint/config`
   - Luego se configuró las especificaciones que utilice JavaScript (ESM), React, TypeScript, Browser, Guide, Standard, JavaScript y en mi caso, tuve que instalar manualmente las dependencias que se indicará en la terminar.
+    - En una de las dependencias me dio error por las versiones y tuve que utilizar `--legacy-peer-deps` al final del comando.
   - En el proyecto
     - En el archivo '.eslintrc.cjs': Agregar en el "parserOptions": {
         "project":'./tsconfig.json'
