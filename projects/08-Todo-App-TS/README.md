@@ -7,7 +7,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Inicializar proyecto con Vite
 - ✅ Añadir linter para TypeScript + React
 - ✅ Añadir estilos del TodoMVC
-- [ ] Listar todos los TODOs
+- ✅ Listar todos los TODOs
 - [ ] Poder borrar un TODO
 - [ ] Marcar TODO como completado
 - [ ] Añadir forma de filtrar TODOs (Footer)
@@ -46,3 +46,9 @@ Aplicación Todo-App con TypeScript
     - Simulamos unos datos de acuerdo a la lista del 'type.d.ts'.
     - Convertimos la función App en una constante que será del tipo 'JSX.Element'
     - Utilizamos el componente Todos y le pasamos los datos simulados.
+- Listar todos los TODOs
+  - Creamos el Todo.tsx que será el componente de cada fila de la lista.
+    - Este recibe el id, title y completed como props, porque son los valores que tiene la lista de objetos.
+  - Utilizamos el componente 'Todo' en el Todos.tsx
+    - Va dentro del mapeo del listado, envuelto por un 'li' pasándole las props requeridas.
+  - Agregamos los className a los componentes para aplicar el css de la dependencia instalada.
