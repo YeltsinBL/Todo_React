@@ -8,7 +8,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Añadir linter para TypeScript + React
 - ✅ Añadir estilos del TodoMVC
 - ✅ Listar todos los TODOs
-- [ ] Poder borrar un TODO
+- ✅ Poder borrar un TODO
 - [ ] Marcar TODO como completado
 - [ ] Añadir forma de filtrar TODOs (Footer)
 - [ ] Mostrar número de TODOs pendientes (Footer)
@@ -52,3 +52,14 @@ Aplicación Todo-App con TypeScript
   - Utilizamos el componente 'Todo' en el Todos.tsx
     - Va dentro del mapeo del listado, envuelto por un 'li' pasándole las props requeridas.
   - Agregamos los className a los componentes para aplicar el css de la dependencia instalada.
+- Borrar un TODO
+  - Usamos UtilityType para obtenerlos tipos de la Interfaz del Todo
+  - En el App.tsx
+    - Creamos una función usando una constante que recibe un Id como parámetro para eliminar el Todo de la lista.
+    - Esta función se pasará por todos los componentes hasta llegar al click del botón de eliminar.
+  - En el Todos.tsx
+    - Agregamos un nuevo parámetro en el interfaz del Prop para que acepte la función como parámetro.
+    - Pasamos el parámetro en el componente Todo.
+  - En el Todo.tsx
+    - Creamos una interfaz Prop que extienda de la otra interfaz del Todo para agregar otra propiedad que acepte la función como parámetro.
+    - Pasamos la función al click del botón.
