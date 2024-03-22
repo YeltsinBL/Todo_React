@@ -4,20 +4,12 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "standard-with-typescript",
+        "love",
         "plugin:react/recommended"
     ],
     "overrides": [
         {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
+            "files": ['*.js', '*.jsx', '*.ts', '*.tsx'],
         }
     ],
     "parserOptions": {
