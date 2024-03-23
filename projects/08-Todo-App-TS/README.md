@@ -9,7 +9,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Añadir estilos del TodoMVC
 - ✅ Listar todos los TODOs
 - ✅ Poder borrar un TODO
-- [ ] Marcar TODO como completado
+- ✅ Marcar TODO como completado
 - [ ] Añadir forma de filtrar TODOs (Footer)
 - [ ] Mostrar número de TODOs pendientes (Footer)
 - [ ] Añadir forma de borrar todos los TODOs completados
@@ -63,3 +63,11 @@ Aplicación Todo-App con TypeScript
   - En el Todo.tsx
     - Creamos una interfaz Prop que extienda de la otra interfaz del Todo para agregar otra propiedad que acepte la función como parámetro.
     - Pasamos la función al click del botón.
+- Marcar TODO como completado
+  - Creamos una función 'handleCompleted' que recibe los parámetros 'id y completed' para actualizar los datos de la lista.
+    - Indicamos el tipo de dato de los parámetros utilizando el Pick para sacar el tipo de la misma lista.
+    - Esta función se pasará por todos los componentes hasta llegar al componente que lo utilizará.
+  - Agregamos la nueva propiedad con sus parámetro en las interfaces del Todos.tsx y Todo.tsx para que el componente de cada uno los acepte.
+  - En el Todo.tsx, que es en donde se usará la función
+    - Se crea otra función 'handleCompletedTodoCheck' para pasarle los valores necesarios e indicar de que tipo de elemento pertenece este evento de cambio.
+    - Se utiliza la nueva función 'handleCompletedTodoCheck' en el evento change del elemento input.
