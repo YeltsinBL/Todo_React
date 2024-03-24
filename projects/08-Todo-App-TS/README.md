@@ -10,7 +10,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Listar todos los TODOs
 - ✅ Poder borrar un TODO
 - ✅ Marcar TODO como completado
-- [ ] Añadir forma de filtrar TODOs (Footer)
+- ✅ Añadir forma de filtrar TODOs (Footer)
 - [ ] Mostrar número de TODOs pendientes (Footer)
 - [ ] Añadir forma de borrar todos los TODOs completados
 - [ ] Crear Header con input (Header)
@@ -71,3 +71,22 @@ Aplicación Todo-App con TypeScript
   - En el Todo.tsx, que es en donde se usará la función
     - Se crea otra función 'handleCompletedTodoCheck' para pasarle los valores necesarios e indicar de que tipo de elemento pertenece este evento de cambio.
     - Se utiliza la nueva función 'handleCompletedTodoCheck' en el evento change del elemento input.
+- Filtrar TODOs
+  - Se creó un fichero 'consts.ts' que contiene las opciones del filtro y las acciones a cada opción.
+  - En el fichero 'types.d.ts', creamos una constante que tendrá el valor de las opciones del filtro.
+    - Primero obtenemos una 'key' de las opciones y luego obtenemos el valor del cual pertenece la key.
+  - Creamos el fichero 'Filters.tsx'
+    - Contiene el componente con todas las opciones del filtro.
+    - Se crea una interfaz 'Props' que contiene los valores que recibirá el componente.
+      - filterSelected: El valor del filtro seleccionado.
+      - onFilterChange: Función que recibe el key de la opción del filtro seleccionado para mostrar sus respectivos datos.
+    - En el componente, convertimos los datos de las opciones del filtro en un array para mapearlos y utilizamos sus datos junto con los parámetros para mostrar las opciones con su funcionalidad.
+  - Creamos el fichero 'Footer.tsx'
+    - Se crea una interfaz 'Props' que contiene los valores que recibirá el componente.
+    - Este componente utiliza el componente del Filters y pasa sus valores necesarios.
+  - En el App.tsx
+    - Se crea un useState el cual almacenará el valor del filtro seleccionado.
+    - Creamos la funciones handleFilterChange que recibe como parámetro la key del filtro seleccionado para actualizar el useState del filtro seleccionado.
+    - Creamos un nuevo array cuyos datos serán del filtro del array actual.
+    - Reemplazamos el envío de datos del array actual por el nuevo array filtrado en el componente Todos.
+    - Utilizamos el componente Footer y le pasamos sus valores necesarios, el valor del useState del filtro seleccionado y la función para actualizar el useState del filtro seleccionado.
