@@ -51,6 +51,8 @@ const App = (): JSX.Element => {
     setFilterSelected(filter)
   }
 
+  const activeCount = todos.filter(todo => !todo.completed).length
+
   const filteredTodos = todos.filter( todo =>{
     if (filterSelected == TODO_FILTERS.ACTIVE) return !todo.completed
     if (filterSelected == TODO_FILTERS.COMPLETED) return todo.completed
@@ -65,6 +67,7 @@ const App = (): JSX.Element => {
         todos={filteredTodos} 
       />
       <Footer
+        activeCount={activeCount}
         filterSelected= {filterSelected}
         handleFilterChange = {handleFilterChange}
       />

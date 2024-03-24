@@ -11,7 +11,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Poder borrar un TODO
 - ✅ Marcar TODO como completado
 - ✅ Añadir forma de filtrar TODOs (Footer)
-- [ ] Mostrar número de TODOs pendientes (Footer)
+- ✅ Mostrar número de TODOs pendientes (Footer)
 - [ ] Añadir forma de borrar todos los TODOs completados
 - [ ] Crear Header con input (Header)
 - [ ] Crear un TODO (Header)
@@ -90,3 +90,10 @@ Aplicación Todo-App con TypeScript
     - Creamos un nuevo array cuyos datos serán del filtro del array actual.
     - Reemplazamos el envío de datos del array actual por el nuevo array filtrado en el componente Todos.
     - Utilizamos el componente Footer y le pasamos sus valores necesarios, el valor del useState del filtro seleccionado y la función para actualizar el useState del filtro seleccionado.
+- Mostrar número de TODOs pendientes
+  - En el Footer.tsx
+    - Agregamos un nuevo parámetro en la interfaz Prop, 'activeCount'.
+    - Utilizamos este parámetro dentro del componente Footer en un span.
+  -En el App.tsx
+    - Creamos una nueva constante que será el total de los datos activos.
+    - Pasamos esta constante al componente Footer.
