@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Todos } from './components/Todos'
-import { FILTER_VALUE, TodoId , type Todo as TodoType} from './types'
+import { FILTER_VALUE, TodoId , TodoTitle, type Todo as TodoType} from './types'
 import { TODO_FILTERS } from './const'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
@@ -66,9 +66,21 @@ const App = (): JSX.Element => {
     return todo
   })
 
+  const handleAddTodo = ({title}: TodoTitle) : void => {
+    const newTodo = {
+      id: crypto.randomUUID(),
+      title,
+      completed: false
+    }
+    const newTodos = [...todos, newTodo]
+    setTodos(newTodos)
+  }
+
   return (
     <div className='todoapp'>
-      <Header />
+      <Header 
+        onAddTodo={handleAddTodo}
+      />
       <Todos
         onToggleCompletedTodo ={handleCompleted}
         onRemoveTodo = {handleRemove}

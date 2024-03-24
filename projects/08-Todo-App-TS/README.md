@@ -14,7 +14,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Mostrar número de TODOs pendientes (Footer)
 - ✅ Añadir forma de borrar todos los TODOs completados
 - ✅ Crear Header con input (Header)
-- [ ] Crear un TODO (Header)
+- ✅ Crear un TODO (Header)
 - [ ] Poder editar el texto de un TODO (Doble click)
 - [ ] Añadir animaciones con AutoAnimate
 - [ ] Pasar a Reducer
@@ -115,3 +115,14 @@ Aplicación Todo-App con TypeScript
     - Contiene el componente Header
     - Utiliza el componente CreateTodo.
   - En el App.tsx, usamos el componente Header para mostrarlo.
+- Crear un TODO
+  - En el CreateTodo.tsx
+    - Agregamos en la interfaz Prop la propiedad saveTodo que servirá como parámetro del componente para guardar el nuevo dato al TODO.
+    - Creamos la función handleSubmit, indicando que el event es un HTMLFormElement, usamos el parámetro saveTodo pasándole el valor agregado en el input y actualizamos el useState reseteando el valor.
+    - Usamos la función handleSubmit en el evento onSubmit del Form.
+  - En el Header.tsx
+    - Agregamos en la interfaz Prop la propiedad onAddTodo para pasarlo al componente CreateTodo.
+  - En App.tsx
+    - Creamos la función handleAddTodo que recibe como parámetro el texto agregado en el input,
+    - Dentro de la función handleAddTodo creamos un nuevo TODO, el cual lo unimos con el TODO principal en una nueva constante y lo pasamos actualizando el useState del TODOS.
+    - Pasamos la función al componente Header.
