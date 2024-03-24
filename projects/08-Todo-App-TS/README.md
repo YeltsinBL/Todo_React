@@ -13,7 +13,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Añadir forma de filtrar TODOs (Footer)
 - ✅ Mostrar número de TODOs pendientes (Footer)
 - ✅ Añadir forma de borrar todos los TODOs completados
-- [ ] Crear Header con input (Header)
+- ✅ Crear Header con input (Header)
 - [ ] Crear un TODO (Header)
 - [ ] Poder editar el texto de un TODO (Doble click)
 - [ ] Añadir animaciones con AutoAnimate
@@ -106,3 +106,12 @@ Aplicación Todo-App con TypeScript
     - Creamos una función para actualizar el useState de la lista del TODO filtrando solo por los que no están completados.
     - Creamos una constante que indicará la cantidad de TODO completados.
     - Pasamos al componente Footer los nuevos datos requeridos, la función y constante.
+- Crear Header con input
+  - Creamos el fichero CreateTodo.tsx
+    - Contiene el componente CreateTodo
+    - Este componente usa un useState para actualizar el ingreso de datos, este cambio se hace en el evento OnChange del input.
+    - El input esta dentro de un form, que se usará para agregar los datos ingresados al TODO.
+  - Creamos el Header.tsx
+    - Contiene el componente Header
+    - Utiliza el componente CreateTodo.
+  - En el App.tsx, usamos el componente Header para mostrarlo.

@@ -3,6 +3,7 @@ import { Todos } from './components/Todos'
 import { FILTER_VALUE, TodoId , type Todo as TodoType} from './types'
 import { TODO_FILTERS } from './const'
 import { Footer } from './components/Footer'
+import { Header } from './components/Header'
 
 const mockTodos = [
   {
@@ -67,6 +68,7 @@ const App = (): JSX.Element => {
 
   return (
     <div className='todoapp'>
+      <Header />
       <Todos
         onToggleCompletedTodo ={handleCompleted}
         onRemoveTodo = {handleRemove}
