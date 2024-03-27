@@ -17,6 +17,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Crear un TODO (Header)
 - ✅ Poder editar el texto de un TODO (Doble click)
 - ✅ Añadir animaciones con AutoAnimate
+- ✅ Pasar a CustomHook
 - [ ] Pasar a Reducer
 - [ ] Sincronizar con el backend
 
@@ -158,3 +159,6 @@ Aplicación Todo-App con TypeScript
   - Importamos el hook de la dependencia: 'useAutoAnimate' indicando en la importación que se esta usando React.
   - Creamos una constante del useAutoAnimate.
   - Usamos la constante en la referencia del ul.
+- Pasar a CustomHook
+  - Se creó un nuevo fichero UseTodos.ts.
+  - Se movió todos los hooks de App.tsx a una función dentro del UseTodos.ts.
