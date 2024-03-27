@@ -16,7 +16,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Crear Header con input (Header)
 - ✅ Crear un TODO (Header)
 - ✅ Poder editar el texto de un TODO (Doble click)
-- [ ] Añadir animaciones con AutoAnimate
+- ✅ Añadir animaciones con AutoAnimate
 - [ ] Pasar a Reducer
 - [ ] Sincronizar con el backend
 
