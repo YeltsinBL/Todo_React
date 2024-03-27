@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { TodoId, type ListOfTodos, type Todo as TodoType } from "../types"
 import { Todo } from "./Todo"
+import { useAutoAnimate } from "@formkit/auto-animate/react"
 
 interface Props {
     todos: ListOfTodos
@@ -12,8 +13,9 @@ interface Props {
 // tipamos un FC (FunctionComponent)
 export const Todos: React.FC<Props> = ({ todos, onToggleCompletedTodo, onRemoveTodo, onUpdateTodo}) => {
     const [isEditing, setIsEditing]= useState('')
+    const [parent] = useAutoAnimate()
     return(
-        <ul className="todo-list">
+        <ul className="todo-list" ref={parent}>
             {todos.map(todo =>(
                 <li key={todo.id} 
                     className={`

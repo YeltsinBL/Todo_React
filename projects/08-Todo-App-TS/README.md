@@ -152,3 +152,9 @@ Aplicación Todo-App con TypeScript
       - Recorremos la lista del Todos para verificar si el id existe y actualizar su valor.
       - Actualizamos el UseState de la lista del Todos.
     - Pasamos la función en la nueva propiedad del Todos.
+- Animaciones con AutoAnimate
+  - Instalamos la dependencia `npm install @formkit/auto-animate -E`
+    - En mi caso, como tengo conflicto por versiones, agrego esto al final del comando: `--legacy-peer-deps`
+  - Importamos el hook de la dependencia: 'useAutoAnimate' indicando en la importación que se esta usando React.
+  - Creamos una constante del useAutoAnimate.
+  - Usamos la constante en la referencia del ul.
