@@ -18,6 +18,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Poder editar el texto de un TODO (Doble click)
 - ✅ Añadir animaciones con AutoAnimate
 - ✅ Pasar a CustomHook
+- ✅ Añadir el filtro seleccionado como parámetro en la url.
 - [ ] Pasar a Reducer
 - [ ] Sincronizar con el backend
 
@@ -162,3 +163,6 @@ Aplicación Todo-App con TypeScript
 - Pasar a CustomHook
   - Se creó un nuevo fichero UseTodos.ts.
   - Se movió todos los hooks de App.tsx a una función dentro del UseTodos.ts.
+- Añadir el filtro seleccionado como parámetro en la url.
+  - En useTodos.ts
+    - En la función handleFilterChange: Se creó el parámetro filter y se agregó al path de la url.

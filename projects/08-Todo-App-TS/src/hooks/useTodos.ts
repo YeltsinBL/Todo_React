@@ -30,6 +30,10 @@ export function useTodos(){
   
   const handleFilterChange = (filter:FILTER_VALUE):void => {
     setFilterSelected(filter)
+    // Agregar en la URL el filtro seleccionado
+    const params = new URLSearchParams(window.location.search)
+    params.set('filter', filter)
+    window.history.pushState({},'',`${window.location.pathname}?${params.toString()}`)
   }
 
   const handleRemoveCompleted = (): void =>{
