@@ -15,7 +15,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Añadir forma de borrar todos los TODOs completados
 - ✅ Crear Header con input (Header)
 - ✅ Crear un TODO (Header)
-- [ ] Poder editar el texto de un TODO (Doble click)
+- ✅ Poder editar el texto de un TODO (Doble click)
 - [ ] Añadir animaciones con AutoAnimate
 - [ ] Pasar a Reducer
 - [ ] Sincronizar con el backend
@@ -126,3 +126,29 @@ Aplicación Todo-App con TypeScript
     - Creamos la función handleAddTodo que recibe como parámetro el texto agregado en el input,
     - Dentro de la función handleAddTodo creamos un nuevo TODO, el cual lo unimos con el TODO principal en una nueva constante y lo pasamos actualizando el useState del TODOS.
     - Pasamos la función al componente Header.
+- Editar el texto de un TODO
+  - En Todo.tsx
+    - Utilizamos el UseEffect, UseState y UseRef
+    - Agregamos nuevas propiedades a ls interfaz Prop
+      - UpdateTodo: recibe el id y texto de la fila que se hizo doble click.
+      - isEditing: verificar si se hizo doble click la fila para poner el cursor en el input.
+      - setIdEditing: recibe como parámetro el nuevo texto para actualizar el valor de la fila.
+    - Creamos un UseState al title.
+    - Creamos un UseRef que sea del tipo HTMLInputElement.
+    - Creamos la función handleKeyDown que sea del tipo HTMLInputElement para hacer la lógica del doble click.
+    - Hacemos un UseEffect al isEditing para poner el cursor en el input.
+    - Creamos el input usando sus propiedades necesarias para editar el valor.
+  - En el Todos.tsx
+    - Usamos el useState
+    - Agregamos una propiedad a la interfaz Prop
+      - OnUpdateTodo: recibe el id y titulo de la fila a actualizar.
+    - Creamos un useState vacío.
+    - Actualizamos el className de la lista (li) para agregar el modo edición (editing).
+    - Usamos la propiedad del doble click para actualizar el valor del useState.
+    - Pasamos los nuevos valores necesarios al componente Todo.
+  - En el App.tsx
+    - Creamos la función handleUpdateTodo
+      - Recibe como parámetro un ide y titulo.
+      - Recorremos la lista del Todos para verificar si el id existe y actualizar su valor.
+      - Actualizamos el UseState de la lista del Todos.
+    - Pasamos la función en la nueva propiedad del Todos.
