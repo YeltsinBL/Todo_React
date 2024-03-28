@@ -19,7 +19,7 @@ Aplicación Todo-App con TypeScript
 - ✅ Añadir animaciones con AutoAnimate
 - ✅ Pasar a CustomHook
 - ✅ Añadir el filtro seleccionado como parámetro en la url.
-- [ ] Pasar a Reducer
+- ✅ Pasar a Reducer
 - [ ] Sincronizar con el backend
 
 ## Procesos
@@ -166,3 +166,22 @@ Aplicación Todo-App con TypeScript
 - Añadir el filtro seleccionado como parámetro en la url.
   - En useTodos.ts
     - En la función handleFilterChange: Se creó el parámetro filter y se agregó al path de la url.
+- Pasar a Reducer
+  - Se creó el fichero UseTodosReducer.ts
+    - Se creó un tipo Action que contiene
+      - Type: identifica la función
+      - Payload: los parámetros que utilizará las funciones.
+    - Se creo una interfaz State, con las propiedades
+      - Sync: indicará True si hay cambios en la lista.
+      - Todos: lista del TODO.
+      - FilterSelected: valor del filtro.
+    - Se creó una constante initialState con sus valores por defecto porque se cargará al iniciar la aplicación, sus propiedades
+      - Sync: False
+      - Todos: vacío
+      - FilterSelected: dependiendo de la URL si tiene Query param mostrará la lista del filtro seleccionado.
+    - Se creó una función reducer que recibe como parámetro la interfaz del State y el tipo Action.
+      - Se realiza la lógica de acuerdo al tipo  de Acción.
+    - Se creó un CustomHook UseTodos.
+      - Se usó el UseReducer agregando la función reducer y la constante initialState.
+      - Se crearon las funciones y lógica que se necesitará en el App.tsx.
+  - Se modificaron los tipados de los parámetros en todos los componentes necesarios.

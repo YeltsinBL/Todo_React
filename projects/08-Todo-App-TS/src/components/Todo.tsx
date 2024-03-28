@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
-import { TodoId, type Todo as TodoType } from "../types"
+import { type Todo as TodoType } from "../types"
 
 interface Props extends TodoType {
-    onToggleCompletedTodo: ({id, completed}: Pick<TodoType, 'id' | 'completed'>) => void
-    onRemoveTodo: ({ id } : TodoId ) => void
-    updateTodo: ({id, title}: Pick<TodoType, 'id' | 'title'>) => void
+    onToggleCompletedTodo: (id: string, completed: boolean) => void
+    onRemoveTodo: ( id: string ) => void
+    updateTodo: (id: string, title: string) => void
     isEditing: string
     setIsEditing: (completed: string) => void
 }
@@ -15,7 +15,7 @@ export const Todo:React.FC<Props> = (
     }
     ) => {
     const handleCompletedTodoCheck = (event : React.ChangeEvent<HTMLInputElement>):void =>{
-        onToggleCompletedTodo({id, completed:event.target.checked})
+        onToggleCompletedTodo(id, event.target.checked)
     }
 
     const [editingTitle, setEditingTitle] = useState(title)
@@ -25,8 +25,8 @@ export const Todo:React.FC<Props> = (
         if(e.key==='Enter'){
             setEditingTitle(editingTitle.trim())
 
-            if (editingTitle !== title) updateTodo({id, title: editingTitle})
-            if (editingTitle === '') onRemoveTodo({id})
+            if (editingTitle !== title) updateTodo(id, editingTitle)
+            if (editingTitle === '') onRemoveTodo(id)
             
             setIsEditing('')
         }
@@ -51,7 +51,7 @@ export const Todo:React.FC<Props> = (
             <button 
                 className="destroy"
                 onClick={() => {
-                    onRemoveTodo({ id })}
+                    onRemoveTodo(id )}
                 }
                 />
         </div>

@@ -1,13 +1,13 @@
 import React, { useState } from "react"
-import { TodoId, type ListOfTodos, type Todo as TodoType } from "../types"
+import { type ListOfTodos } from "../types"
 import { Todo } from "./Todo"
 import { useAutoAnimate } from "@formkit/auto-animate/react"
 
 interface Props {
     todos: ListOfTodos
-    onToggleCompletedTodo: ({id, completed}: Pick<TodoType, 'id' | 'completed'>) => void
-    onRemoveTodo: ({ id } : TodoId  ) => void
-    onUpdateTodo:({id, title}: Pick<TodoType, 'id' | 'title'>) => void
+    onToggleCompletedTodo: (id: string, completed: boolean) => void
+    onRemoveTodo: ( id :string ) => void
+    onUpdateTodo:(id: string, title: string) => void
 }
 // Pasar el parámetro por el Props y es de tipo genérico
 // tipamos un FC (FunctionComponent)
