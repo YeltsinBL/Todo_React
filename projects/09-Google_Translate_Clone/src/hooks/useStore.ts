@@ -14,6 +14,7 @@ const initialState: State = {
 function reducer(state: State, action: Action) {
     const { type } = action
     if (type === 'INTERCHANGE_LANGUAGES') {
+        if (state.fromLanguage === 'auto') return state
         return {
             ...state,
             fromLanguage: state.toLanguage,
@@ -77,7 +78,7 @@ export function useStore() {
         dispatch({ type: 'SET_RESULT', payload })
     }
     return {
-        fromLanguage, toLanguage, fromText, result, loading, 
+        fromLanguage, toLanguage, fromText, result, loading,
         interchangeLanguages, setFromLanguages, setToLanguages,
         setFromText, setResult
     }
