@@ -16,8 +16,8 @@ function reducer(state: State, action: Action) {
     if (type === 'INTERCHANGE_LANGUAGES') {
         return {
             ...state,
-            fromLanguages: state.toLanguage,
-            toLanguages: state.fromLanguage
+            fromLanguage: state.toLanguage,
+            toLanguage: state.fromLanguage
         }
     }
 
